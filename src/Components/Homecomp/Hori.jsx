@@ -5,50 +5,51 @@ import React from 'react'
 
 const Hori = () => {
 
-    gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger)
 
-    const workimg = [
-        "https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg",
-        "https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg",
-        "https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg",
-        "https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg",
-        "https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg"
-    ]
+  const workimg = [
+    "https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg",
+    "https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg",
+    "https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg",
+    "https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg",
+    "https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg",
+  ]
 
-    useGSAP(()=>{
-        gsap.to(".hori-img",{
-            transform: "translateX(-350%)",
-            scrollTrigger:{
-                trigger:".hori-parent",
-                // markers:true,
-                start:"top 0",
-                end:"top -200%",
-                pin: true,
-                scrub:1
-            }
-        })
+  useGSAP(() => {
+    gsap.to(".hori-img", {
+      transform: "translateX(-350%)",
+      scrollTrigger: {
+        trigger: ".hori-parent",
+        // markers:true,
+        start: "top 0",
+        end: "top -200%",
+        pin: true,
+        scrub: 1
+      }
     })
+  })
 
-    
+
   return (
     <>
-    <div className='h-[30vh] w-full bg-black'></div>
+      <div className='h-[30vh] w-full bg-black'></div>
       <div className=' hori-parent h-screen w-[330vw]  flex flex-col bg-black'>
-          <h1 className='lg:text-7xl max-sm:text-[7vw] font-bold px-10 pt-28'>
-            LATEST PROJECT
-          </h1>
-          <div className='flex '>
-         {workimg.map((workimg,index)=> {
-            return  <div id={index} className='hori-img ' >
-            <img className='h-[65vh]  w-[60vw] sm:w-screen object-cover px-10 pt-12'
-             src={workimg} alt="" />
-          </div>
-         })}
-         </div>
+        <h1 className='lg:text-7xl max-sm:text-[7vw] font-bold px-10 pt-28'>
+          LATEST PROJECT
+        </h1>
+        <div className='flex '>
+          {workimg.map((workimg, index) => {
+            return <div
+              key={index} className='hori-img ' >
+              <img className='h-[65vh]  w-[60vw] sm:w-screen object-cover px-10 pt-12'
+                src={workimg} alt="" />
+            </div>
+          })}
+        </div>
       </div>
 
-      </>
-   
+    </>
+
   )
 
 }

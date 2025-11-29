@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../Components/common/Navbar'
 import Hero from '../Components/Homecomp/Hero'
 import Pin from '../Components/Homecomp/Pin'
-import Hori from '../Components/Homecomp/hori'
+import Hori from '../Components/Homecomp/Hori'
 
 import Homevideo from '../Components/Homecomp/Homevideo'
 import Servicehome from '../Components/Homecomp/Servicehome'
