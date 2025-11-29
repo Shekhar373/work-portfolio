@@ -1,25 +1,30 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { ScrollToPlugin } from 'gsap/all'
-import React from 'react'
+import { ScrollToPlugin, SplitText } from 'gsap/all'
+import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 const Upperfooter = () => {
-  gsap.registerPlugin(ScrollToPlugin)
+  const collab = useRef(null)
+  gsap.registerPlugin(ScrollToPlugin,SplitText)
 
   useGSAP(()=>{
-    gsap.from(".collab h1",{
-      // background:"white",
-      // color:"black",
-      y:120,
-      opacity:0,
-      stagger: 0.1,
+    let split = SplitText.create(".collab h1",{
+      type:"chars",
+      mask:true,
+      
+    })
+
+    gsap.from(split.chars,{
+      y:150,
+      stagger:{
+        amount:1,
+        from:"random"
+      },
       scrollTrigger:{
-        trigger:".collab",
+        triggr:collab.current,
         // markers:true,
-        start:"top 40%",
-       
-        
+        start:"top 50%"
       }
     })
 
@@ -36,7 +41,7 @@ const Upperfooter = () => {
   })
   return (
     <div className='h-[130vh] w-full  flex flex-col justify-center items-center '>
-      <div className=' collab h-screen w-full flex flex-col justify-center items-center'>
+      <div ref={collab} className=' collab h-screen w-full flex flex-col justify-center items-center'>
         <div className='border-0 overflow-hidden'>
           <h1 className='uppercase text-xl tracking-tighter '>Let's start the conversation</h1>
         </div>

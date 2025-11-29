@@ -7,7 +7,7 @@ const Pin = () => {
     gsap.registerPlugin(ScrollTrigger,SplitText)
     
     useGSAP(()=>{
-        let split = SplitText.create("h1",{
+        let split = SplitText.create(".pin-color h1",{
             type:"chars",
             musk:"lines",
         })
@@ -16,9 +16,9 @@ const Pin = () => {
             y:150,
             
             stagger: {
-             amount:1,
-             from:"center",
-             ease: 'power2.inOut',
+             amount:0.5,
+             from:"end",
+            //  ease: 'power2.inOut',
             },
             scrollTrigger:{
                 trigger:".pin-color",

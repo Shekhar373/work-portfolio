@@ -13,8 +13,9 @@ const Footer = () => {
   
   useGSAP(()=>{
 
-    const split = SplitText.create(".foot-text",{
-    type:"chars"
+    let split = SplitText.create(".foot-text h1",{
+    type:"chars",
+    
   })
 
     gsap.from(split.chars,{
@@ -67,7 +68,7 @@ const Footer = () => {
         </div>
       </div>
       <div className=' foot-text h-[40vh] w-full overflow-hidden text-[20vw]  flex justify-center items-center'>
-         NAME
+         <h1>NAME</h1>
       </div>
     </div>
   )
