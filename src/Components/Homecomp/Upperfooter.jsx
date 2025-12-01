@@ -1,12 +1,12 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { ScrollToPlugin, SplitText } from 'gsap/all'
+import { ScrollTrigger, SplitText } from 'gsap/all'
 import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 const Upperfooter = () => {
   const collab = useRef(null)
-  gsap.registerPlugin(ScrollToPlugin,SplitText)
+  gsap.registerPlugin(ScrollTrigger,SplitText)
 
   useGSAP(()=>{
     let split = SplitText.create(".collab h1",{
@@ -22,9 +22,11 @@ const Upperfooter = () => {
         from:"random"
       },
       scrollTrigger:{
-        triggr:collab.current,
+        triggr:".collab",
         // markers:true,
-        start:"top 50%"
+        start:"top 30%",
+        // end:"top 50%",
+        // scrub:1
       }
     })
 
