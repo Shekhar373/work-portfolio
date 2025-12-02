@@ -48,19 +48,15 @@ const Servicehome = () => {
     })
   })
 
-
-
-
-
-  return (
+ return (
     <div className=' min-h-[90vh] w-full '>
       {servicearr.map((servicearr, index) => {
         return <div key={index} className=' service-line lg:h-[30vh] sm:h-[20vh] p-10 w-screen bg-black border-b overflow-hidden hover:bg-[#1A1A1A] transition-all items-center text-white lg:flex gap-5'>
           <h1 className=' text-2xl pb-10 '>{servicearr.number}</h1>
-          <h1 className='lg:text-7xl  font-extrabold'>{servicearr.name}</h1>
+          <h1 className='lg:text-7xl max-sm:text-5xl  font-extrabold'>{servicearr.name}</h1>
         </div>
       })}
-      <div className='h-[40vh] w-full flex justify-center'>
+      <div className='lg:h-[40vh] max-sm:h-[20vh] w-full flex justify-center'>
         <button className='text-xl bg-white text-black font-bold h-fit mt-24 py-3 px-5 rounded-4xl border'>EXPLORE SERVICES</button>
       </div>
     </div>

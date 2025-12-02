@@ -19,7 +19,7 @@ const Serviceupper = () => {
     })
   })
   return (
-    <div className=' service-text h-[60vh] w-full p-10 text-white lg:leading-28 2xl:leading-40 mt-20'>
+    <div className=' service-text lg:h-[60vh] max-sm:h-[20vh] w-full p-10 text-white lg:leading-28 2xl:leading-40 mt-20'>
       <div className='text-[8vw] overflow-hidden font-medium'>
         <h1>SERVICES</h1>
       </div>

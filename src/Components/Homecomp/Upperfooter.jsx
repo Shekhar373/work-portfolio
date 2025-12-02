@@ -42,7 +42,7 @@ const Upperfooter = () => {
     })
   })
   return (
-    <div className='h-[130vh] w-full  flex flex-col justify-center items-center '>
+    <div className='lg:h-[130vh] max-sm:h-[80vh] w-full  flex flex-col justify-center items-center '>
       <div ref={collab} className=' collab h-screen w-full flex flex-col justify-center items-center'>
         <div className='border-0 overflow-hidden'>
           <h1 className='uppercase text-xl tracking-tighter '>Let's start the conversation</h1>

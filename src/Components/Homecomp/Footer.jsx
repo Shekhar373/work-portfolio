@@ -30,19 +30,15 @@ const Footer = () => {
     })
   })
   return (
-    <div className='h-screen w-full overflow-hidden'>
-      <div className='h-[60vh] w-full flex'>
-        <div className='h-full w-[55vw] flex flex-col gap-15 '>
-          <div className='flex gap-3 text-[3.5vw]   pt-20 px-5 font-medium'>
-            <h1>Design</h1>
-            <h1>in</h1>
-            <h1>once.</h1>
-            <h1>Design</h1>
-            <h1>it</h1>
-            <h1>right</h1>
+    <div className='h-screen w-full flex flex-col justify-between overflow-hidden'>
+      <div className='lg:h-[60vh] max-sm:h-[30vh] w-full lg:flex'>
+        <div className='h-full lg:w-[55vw] max-sm:w-screen flex flex-col gap-15 '>
+          <div className='lg:flex gap-3 lg:text-[3.5vw] max-sm:text-5xl pt-20 px-5 font-medium'>
+            <h1>Design it first.</h1>
+            <h1>Design it right</h1>
           </div>
-          <div className='pl-5'>
-            <Link className=' px-68 py-5 bg-white border-0 hover:bg-[#1A1A1A] hover:text-white text-black font-bold'
+          <div className='pl-5 '>
+            <Link className=' max-sm:px-90 lg:px-64 py-5 bg-white border-0 hover:bg-[#1A1A1A] hover:text-white text-black font-bold'
             to="/contact" >Let's Talk</Link>
           </div>
           <div className='px-5 font-medium'>
@@ -51,15 +47,15 @@ const Footer = () => {
           </div>
 
         </div>
-        <div className='h-full w-[45vw] flex'>
-           <div className='h-full w-1/2  flex flex-col gap-5 pl-44 pt-20 '>
+        <div className='lg:h-full max-sm:h-[30vh] max-sm:mt-20 lg:w-[45vw] max-sm:w-screen flex'>
+           <div className='h-full w-1/2  flex flex-col gap-5 lg:pl-44 max-sm:pl-5 max-sm:text-xl pt-20 '>
               <Link className='font-medium' to="/work" >Work</Link>
               <Link className='font-medium' to="/work" >About</Link>
               <Link className='font-medium' to="/services" >Services</Link>
               <Link className='font-medium' to="/work" >Careers</Link>
               <Link className='font-medium' to="/contact" >Contact</Link>
            </div>
-           <div className='h-full w-1/2 pt-20 pl-20  '>
+           <div className='h-full w-1/2 pt-20 pl-20 max-sm:text-xl  '>
               <a href="#" >Instagram</a><br /><br />
               <a href="#">Linkedin</a><br /><br />
               <a href="#">Twitter</a><br /><br />
@@ -67,7 +63,7 @@ const Footer = () => {
            </div>
         </div>
       </div>
-      <div className=' foot-text h-[40vh] w-full overflow-hidden text-[20vw]  flex justify-center items-center'>
+      <div className=' foot-text h-[40vh]  w-full  overflow-hidden text-[20vw]  flex justify-center items-end'>
          <h1>NAME</h1>
       </div>
     </div>
