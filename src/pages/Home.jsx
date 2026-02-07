@@ -3,25 +3,24 @@ import Navbar from '../Components/common/Navbar'
 import Hero from '../Components/Homecomp/Hero'
 import Pin from '../Components/Homecomp/Pin'
 import Hori from '../Components/Homecomp/Hori'
-
-import Homevideo from '../Components/Homecomp/Homevideo'
-import Servicehome from '../Components/Homecomp/Servicehome'
-import Upperfooter from '../Components/Homecomp/Upperfooter'
+import KnowUs from '../Components/Homecomp/KnowUs'
 import Footer from '../Components/Homecomp/Footer'
-import Serviceupper from '../Components/Homecomp/Serviceupper'
+import Services from '../Components/Homecomp/Services'
+import About from '../Components/Homecomp/About'
+
 
 const Home = () => {
   return (
     <div className='bg-black overflow-x-hidden'>
-        {/* <Navbar /> */}
-        <Hero />
-        <Homevideo />
-        <Pin />
-        <Hori />
-        <Serviceupper />
-        <Servicehome />
-        <Upperfooter />
-        <Footer />
+      {/* <Navbar />  */}
+
+      <Hero />
+      <Pin />
+      <Hori />
+      <About />
+      <Services />
+      <KnowUs />
+      <Footer />
     </div>
   )
 }

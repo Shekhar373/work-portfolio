@@ -4,3 +4,26 @@
     background-color: #1A1A1A;
     color: rgb(255, 255, 255);
 }
+
+
+
+body{
+    font-family: "Bricolage Grotesque";
+}
+
+.border-animate::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: white;
+    transition: width .3s;
+    
+
+}
+
+.border-animate:hover::after{
+    width: 100%;
+    transition: width .3s;
+
+}

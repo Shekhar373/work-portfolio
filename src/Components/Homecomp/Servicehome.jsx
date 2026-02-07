@@ -34,13 +34,12 @@ const Servicehome = () => {
   useEffect(() => {
     gsap.utils.toArray(".service-line").forEach(serviceline => {
       gsap.from(serviceline, {
-        opacity: 0,
-        y: 50,
+        rotateX: 90,
         scrollTrigger: {
           trigger: serviceline,
           // markers: true,
-          start: "top 60%",
-          end: "top 40%",
+          start: "top 70%",
+          end: "top 50%",
           scrub: 1
 
         }
@@ -48,7 +47,7 @@ const Servicehome = () => {
     })
   })
 
- return (
+  return (
     <div className=' min-h-[90vh] w-full '>
       {servicearr.map((servicearr, index) => {
         return <div key={index} className=' service-line lg:h-[30vh] sm:h-[20vh] p-10 w-screen bg-black border-b overflow-hidden hover:bg-[#1A1A1A] transition-all items-center text-white lg:flex gap-5'>

@@ -1,53 +1,75 @@
 import { useGSAP } from '@gsap/react'
 import gsap, { ScrollTrigger, SplitText } from 'gsap/all'
 import _SplitText from 'gsap/SplitText'
-import React from 'react'
+import React, { useRef } from 'react'
 
 const Pin = () => {
-    gsap.registerPlugin(ScrollTrigger,SplitText)
-    
-    useGSAP(()=>{
-        let split = SplitText.create(".pin-color h1",{
-            type:"chars",
-            musk:"lines",
+    const mainvideo = useRef(null)
+    gsap.registerPlugin(ScrollTrigger, SplitText)
+
+    useGSAP(() => {
+        let split = SplitText.create(".pin-color h1", {
+            type: "chars",
+            musk: "lines",
         })
 
-        gsap.from(split.chars,{
-            y:150,
-            
+        gsap.from(split.chars, {
+            y: 150,
+
             stagger: {
-             amount:0.5,
-             from:"random",
-            //  ease: 'power2.inOut',
+                amount: 0.5,
+                from: "random",
+                //  ease: 'power2.inOut',
             },
-            scrollTrigger:{
-                trigger:".pin-color",
+            scrollTrigger: {
+                trigger: ".pin-color",
                 // markers: true,
-                start:"top 40%",
-                end:"bottom 100%",
-                scrub:1
+                start: "top 40%",
+                end: "bottom 100%",
+                scrub: 1
             }
         })
+
+        gsap.to(mainvideo.current,{
+          scaleX:0.25,
+          scaleY:0.25,
+         y:"90vh",
+         x:"35vw",
+          
+          scrollTrigger:{
+            trigger:".pin-main",
+            // marker:true,
+            start:"top 0",
+            end:"top -100%",
+            scrub:3
+          }
+        })
     })
-    
-    
-   
+
+
+
     return (
-       
-        <div className=' pin-color  h-screen text-white w-full relative  flex bg-black'>
-            <div className='pin-color-text text-[10vw] inline-block font-bold lg:leading-32 2xl:leading-44 sm:leading-14 pt-16 p-10 '>
-                <h1 className='overflow-clip'>A NETWORK </h1>
-                <h1 className='overflow-clip'>DESIGNED</h1>
-                <h1 className='overflow-clip'>FOR</h1>
-            </div>
-            <div className='pin-color-text flex flex-col items-end absolute right-10 bottom-10 2xl:leading-44 lg:leading-32 sm:leading-14 justify-end font-bold text-[10vw]' >
-                <h1 className='overflow-clip'>TODAY</h1>
-                <h1 className='overflow-clip'>AND</h1>
-                <h1 className='overflow-clip'>TOMORROW</h1>
+
+        <div className='pin-main h-[200vh]  text-white w-full relative '>
+            <div className='absolute z-30 w-full flex justify-center items-center'>
+                    <video ref={mainvideo} className='h-screen w-screen object-cover' autoPlay loop muted src="https://wethinkelastic.com/assets/videos/video-start.mp4#t=0.1"></video>
+                </div>
+            <div className='pin-color h-screen w-full relative top-[120vh]'>
+                
+                <div className='pin-color-text text-[10vw] inline-block font-bold leading-[9vw] pt-16 p-10 '>
+                    <h1 className='overflow-clip'>A NETWORK </h1>
+                    <h1 className='overflow-clip'>DESIGNED</h1>
+                    <h1 className='overflow-clip'>FOR</h1>
+                </div>
+                <div className='pin-color-text flex flex-col items-end absolute right-10 bottom-10 leading-[9vw] justify-end font-bold text-[10vw]' >
+                    <h1 className='overflow-clip'>TODAY</h1>
+                    <h1 className='overflow-clip'>AND</h1>
+                    <h1 className='overflow-clip'>TOMORROW</h1>
+                </div>
             </div>
         </div>
-        
-      
+
+
     )
 }
 
